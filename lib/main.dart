@@ -51,28 +51,41 @@ class _MyHomePageState extends State<MyHomePage> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Text("Bienvenue", style: Theme.of(context).textTheme.titleLarge,),
-          // Row(
-          //   spacing: 8,
-          //   children: [
-          //     Container(
-          //       height: 100,
-          //       width: 100,
-          //       color: Colors.blue,
-          //     ),
-          //     Container(
-          //       height: 100,
-          //       width: 100,
-          //       color: Colors.blue,
-          //     ),
-          //     Container(
-          //       height: 100,
-          //       width: 100,
-          //       color: Colors.blue,
-          //     )
-          //   ],
-          // ),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              spacing: 8,
+              children: [
+                Container(
+                  height: 100,
+                  width: 100,
+                  color: Colors.blue,
+                ),
+                Container(
+                  height: 100,
+                  width: 100,
+                  color: Colors.blue,
+                ),
+                Container(
+                  height: 100,
+                  width: 100,
+                  color: Colors.blue,
+                ),
+                Container(
+                  height: 100,
+                  width: 100,
+                  color: Colors.blue,
+                ),
+                Container(
+                  height: 100,
+                  width: 100,
+                  color: Colors.blue,
+                )
+              ],
+            ),
+          ),
           //
-          // Text("Layout relative"),
+          Text("Layout relative"),
           //
           // Row(
           //   spacing: 8,
@@ -122,21 +135,29 @@ class _MyHomePageState extends State<MyHomePage> {
           //   ],
           // ),
           //
-          // Text("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It"),
+          Text("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It"),
           //
-          // Column(
-          //   children: [
-          //     CourseItem(),
-          //     CourseItem(),
-          //     CourseItem(),
-          //   ],
-          // ),
+          Expanded(
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  CourseItem(title: "Flutter",),
+                  CourseItem(title: "Android",),
+                  CourseItem(title: "Ios",),
+                  CourseItem(title: "Ios",),
+                  CourseItem(title: "Ios",),
+                  CourseItem(title: "Ios",),
+                  CourseItem(title: "Ios",),
+                ],
+              ),
+            ),
+          ),
           // Text("Text"),
           // Flexible(
           //   child: Container(color: Colors.red,)
           // ),
           // Text("After"),
-
+      
           // Wrap(
           //   spacing: 8,
           //   children: [
@@ -149,24 +170,22 @@ class _MyHomePageState extends State<MyHomePage> {
           //     Chip(label: Text("item 1")),
           //     Chip(label: Text("item 1")),
           //     Chip(label: Text("item 1")),
-          //
           //     Chip(label: Text("item 1")),
-          //
           //   ],
           // )
-          Expanded(
-            child: GridView.builder(
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 3,
-                crossAxisSpacing: 4,
-                mainAxisSpacing: 4
-              ),
-              itemBuilder: (context, index) {
-                return Container(color: Colors.red, child: Text("item $index", style: Theme.of(context).textTheme.bodyMedium!.copyWith(fontSize: 40,)));
-              },
-              itemCount: 10,
-            ),
-          )
+          // Expanded(
+          //   child: GridView.builder(
+          //     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          //       crossAxisCount: 3 // nombre par ligne,
+          //       crossAxisSpacing: 4,
+          //       mainAxisSpacing: 4
+          //     ),
+          //     itemBuilder: (context, index) {
+          //       return Container(color: Colors.red, child: Text("item $index", style: Theme.of(context).textTheme.bodyMedium!.copyWith(fontSize: 40,)));
+          //     },
+          //     itemCount: 10,
+          //   ),
+          // )
         ],
       ),
     );
@@ -188,12 +207,11 @@ class CourseItem extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(title),
+              Text(""),
               Text("Application mobile Flutter")
             ],
           ),
         )
-        
       ],
     );
   }

@@ -28,5 +28,5 @@ final darkTheme = ThemeData(
   ),
   appBarTheme: AppBarTheme(
     backgroundColor: Colors.purpleAccent
-  )
+  ),
 );
