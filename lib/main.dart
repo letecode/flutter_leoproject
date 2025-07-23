@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:leoproject/l10n/app_localizations.dart';
 import 'package:leoproject/themes/dark_theme.dart';
 import 'package:leoproject/themes/light_theme.dart';
 
@@ -14,6 +16,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
       theme: lightTheme,
       darkTheme: darkTheme,
       themeMode: ThemeMode.system,
@@ -50,142 +54,7 @@ class _MyHomePageState extends State<MyHomePage> {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Text("Bienvenue", style: Theme.of(context).textTheme.titleLarge,),
-          SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            child: Row(
-              spacing: 8,
-              children: [
-                Container(
-                  height: 100,
-                  width: 100,
-                  color: Colors.blue,
-                ),
-                Container(
-                  height: 100,
-                  width: 100,
-                  color: Colors.blue,
-                ),
-                Container(
-                  height: 100,
-                  width: 100,
-                  color: Colors.blue,
-                ),
-                Container(
-                  height: 100,
-                  width: 100,
-                  color: Colors.blue,
-                ),
-                Container(
-                  height: 100,
-                  width: 100,
-                  color: Colors.blue,
-                )
-              ],
-            ),
-          ),
-          //
-          Text("Layout relative"),
-          //
-          // Row(
-          //   spacing: 8,
-          //   children: [
-          //     Stack(
-          //       children: [
-          //         Container(
-          //           height: 100,
-          //           width: 100,
-          //           color: Colors.black,
-          //         ),
-          //         Positioned(
-          //           bottom: 10,
-          //           left: 10,
-          //           child: Text("Item", style: TextStyle(color: Colors.white),)
-          //         ),
-          //       ],
-          //     ),
-          //     Stack(
-          //       children: [
-          //         Container(
-          //           height: 100,
-          //           width: 100,
-          //           color: Colors.black,
-          //         ),
-          //         Positioned(
-          //             bottom: 10,
-          //             left: 10,
-          //             child: Text("Item", style: TextStyle(color: Colors.white),)
-          //         ),
-          //       ],
-          //     ),
-          //     Stack(
-          //       children: [
-          //         Container(
-          //           height: 100,
-          //           width: 100,
-          //           color: Colors.black,
-          //         ),
-          //         Positioned(
-          //             bottom: 10,
-          //             left: 10,
-          //             child: Text("Item", style: TextStyle(color: Colors.white),)
-          //         ),
-          //       ],
-          //     ),
-          //   ],
-          // ),
-          //
-          Text("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It"),
-          //
-          Expanded(
-            child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  CourseItem(title: "Flutter",),
-                  CourseItem(title: "Android",),
-                  CourseItem(title: "Ios",),
-                  CourseItem(title: "Ios",),
-                  CourseItem(title: "Ios",),
-                  CourseItem(title: "Ios",),
-                  CourseItem(title: "Ios",),
-                ],
-              ),
-            ),
-          ),
-          // Text("Text"),
-          // Flexible(
-          //   child: Container(color: Colors.red,)
-          // ),
-          // Text("After"),
-      
-          // Wrap(
-          //   spacing: 8,
-          //   children: [
-          //     Chip(label: Text("item 1")),
-          //     Chip(label: Text("item 1")),
-          //     Chip(label: Text("item 1")),
-          //     Chip(label: Text("item 1")),
-          //     Chip(label: Text("item 1")),
-          //     Chip(label: Text("item 1")),
-          //     Chip(label: Text("item 1")),
-          //     Chip(label: Text("item 1")),
-          //     Chip(label: Text("item 1")),
-          //     Chip(label: Text("item 1")),
-          //   ],
-          // )
-          // Expanded(
-          //   child: GridView.builder(
-          //     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          //       crossAxisCount: 3 // nombre par ligne,
-          //       crossAxisSpacing: 4,
-          //       mainAxisSpacing: 4
-          //     ),
-          //     itemBuilder: (context, index) {
-          //       return Container(color: Colors.red, child: Text("item $index", style: Theme.of(context).textTheme.bodyMedium!.copyWith(fontSize: 40,)));
-          //     },
-          //     itemCount: 10,
-          //   ),
-          // )
+          Text(AppLocalizations.of(context)!.title, style: Theme.of(context).textTheme.titleLarge,),
         ],
       ),
     );
